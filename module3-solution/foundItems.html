@@ -1,6 +1,15 @@
-<div ng-show="foundItems.length == 0">Nothing found</div>
-<table ng-show="foundItems.length > 0">
-	<tr ng-repeat="item in foundItems">
+<div ng-show="items.length == 0">Nothing found</div>
+<table class="table" ng-show="items.length > 0">
+	<tr>
+		<th>Name</th>
+		<th>Short Name</th>
+		<th>Description</th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="item in items">
 		<td>{{item.name}}</td>
+		<td>{{item.short_name}}</td>
+		<td>{{item.description}}</td>
+		<td><button class="btn" ng-click="onRemove({index: $index})">Don't want this one!</button></td>
 	</tr>
 </table>

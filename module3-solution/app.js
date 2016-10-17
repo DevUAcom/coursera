@@ -22,13 +22,18 @@ function NarrowItDownController(MenuSearchService) {
 			console.log(error);
 		});
 	}
+
+	vm.removeItem = function(index) {
+		vm.found.splice(index, 1);
+	}
 }
 
 function foundItemsDirective() {
 	var ddo = {
+		restrict: 'E',
 	    templateUrl: 'foundItems.html',
 	    scope: {
-	      foundItems: '<',
+	      items: '<',
 	      onRemove: '&'
 	    }
 	};
