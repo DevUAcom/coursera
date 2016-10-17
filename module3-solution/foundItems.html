@@ -1,0 +1,6 @@
+<div ng-show="foundItems.length == 0">Nothing found</div>
+<table ng-show="foundItems.length > 0">
+	<tr ng-repeat="item in foundItems">
+		<td>{{item.name}}</td>
+	</tr>
+</table>
