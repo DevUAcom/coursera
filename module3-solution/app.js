@@ -52,9 +52,11 @@ function MenuSearchService($http, ApiBasePath) {
 		.then (function (result) {
 			var menuItems = result.data.menu_items;
 			var foundItems = [];
-			for (var i = menuItems.length - 1; i >= 0; i--) {
-				if (menuItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
-					foundItems.push(menuItems[i]);
+			if(searchTerm) {
+				for (var i = menuItems.length - 1; i >= 0; i--) {
+					if (menuItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
+						foundItems.push(menuItems[i]);
+					}
 				}
 			}
 
